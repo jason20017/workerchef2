@@ -29,7 +29,7 @@ app.use("/api/user", authRoute);
 
 //Serve static assets if in production
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.json("Hello World");
 });
 
 //設定port
