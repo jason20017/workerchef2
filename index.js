@@ -28,8 +28,9 @@ app.use(cors());
 app.use("/api/user", authRoute);
 
 //Serve static assets if in production
-app.get("/", (req, res) => {
-  res.json("Hello World");
+app.use(express.static(path.join(__dirname, "build")));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 //設定port
